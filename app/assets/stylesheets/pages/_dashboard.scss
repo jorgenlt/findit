@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   max-width: 1200px;
+  margin: auto;
 
   a {
     text-decoration: none;
@@ -12,7 +13,7 @@
 
 .dashboard-search {
   display: flex;
-  width: 80%;
+  width: 100%;
 }
 
 .categories {
@@ -26,9 +27,41 @@
   align-items: center;
   justify-content: center;
   padding: 10px 10px;
-  max-width: 150px;
 
   i {
     font-size: 40px;
   }
+}
+
+.trending {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0px;
+}
+
+.trending-card {
+  display: flex;
+  justify-content: center;
+}
+
+.trending-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 10px;
+
+  img {
+    width: 100%
+  }
+}
+
+.trending-location {
+  font-size: 12px;
+  margin: 5px 0px;
+}
+
+.trending-description {
+  font-weight: 600;
+  margin: 0px 0px 5px 0px;
 }
