@@ -1,0 +1,19 @@
+<div class="navbar-container">
+
+  <div class="navbar">
+    <div class="logo">Logo</div>
+    <div class="links">
+      <ul class="navbar-links">
+        <% if user_signed_in? %>
+          <li><%= link_to 'Post new ad', "#" %></li>
+          <li><%= link_to 'Messages', "#" %></li>
+          <li><%= link_to 'My profile', "#" %></li>
+          <li><%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete} %></li>
+        <% else %>
+          <li><%= link_to 'Log in', new_user_session_path %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+</div>

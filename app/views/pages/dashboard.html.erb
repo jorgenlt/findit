@@ -1,3 +1,7 @@
+<% if user_signed_in? == false %>
+  <%= render 'shared/navbar' %>
+<% end %>
+
 <div class="body-container">
   <div class="dashboard-search">
     <input class="form-control" type="search" placeholder="Search for stuff" arialabel="search">
