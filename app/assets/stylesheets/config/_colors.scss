@@ -1,24 +1,18 @@
-// Define variables for your color scheme
 // primary, secondary, tertiary, quaternary
 
-// For example:
-
-$white: white;
-$black: black;
-$gray:  gray;
+$white:           #FAF9F9;
+$black:           black;
+$gray:            gray;
+$light-gray:      lightgray;
 
 // color schema 1
-$pri: #0D6EFD;
-$sec: #0E0000;
-$ter: white;
-// $qua: ;
+$pri:             #004369;
+$sec:             #01949A;
+$ter:             #ADD2C9;
+// $qua:            #FAF9F9;
 
-
-
-
-$body-background: $white;
-$body-text-color: $black;
+$body-background:   $white;
+$body-text-color:   $black;
 // $borders;
 // $form-control-color;
 // $form-control-bg;
-
