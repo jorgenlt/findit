@@ -11,52 +11,52 @@
   <div class="row row-cols-4 categories">
 
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-bicycle"></i>
-        <span>Bicycles</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'bicycles')), class: "category-link" do %>
+          <i class="fa-solid fa-bicycle"></i>
+          <span>Bicycles</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-mobile"></i>
-        <span>Electronics</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'electronics')), class: "category-link" do %>
+          <i class="fa-solid fa-mobile"></i>
+          <span>Electronics</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-house-chimney-window"></i>
-        <span>Home</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'home')), class: "category-link" do %>
+          <i class="fa-solid fa-house-chimney-window"></i>
+          <span>Home</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-dog"></i>
-        <span>Pets</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'pets')), class: "category-link" do %>
+          <i class="fa-solid fa-dog"></i>
+          <span>Pets</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-volleyball"></i>
-        <span>Sports</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'sports')), class: "category-link" do %>
+          <i class="fa-solid fa-volleyball"></i>
+          <span>Sports</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-car-side"></i>
-        <span>Vehicles</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'vehicles')), class: "category-link" do %>
+          <i class="fa-solid fa-car-side"></i>
+          <span>Vehicles</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-briefcase"></i>
-        <span>Work</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'work')), class: "category-link" do %>
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Work</span>
+      <% end %>
     </div>
     <div class="col">
-      <a href="#" class="category-link">
-        <i class="fa-solid fa-sailboat"></i>
-        <span>Boats</span>
-      </a>
+      <%= link_to category_path(Category.find_by(category_name: 'boats')), class: "category-link" do %>
+          <i class="fa-solid fa-sailboat"></i>
+          <span>Boats</span>
+      <% end %>
     </div>
   </div>
 
