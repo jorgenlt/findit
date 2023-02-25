@@ -11,9 +11,21 @@ Rails.application.routes.draw do
   #   get '/:id', to: 'categories#show_sub', as: 'sub'
   # end
 
-  resources :categories, only: [:show]
+  # resources :categories, only: [:show] do
+  #   get '/:id', to: 'categories#show_sub', as: 'sub'
+  # end
 
-  # get '/categories/:id/:id', to: 'categories#show_sub', as: 'category_sub'
+  # resources :categories, only: [:show]
+
+  # get '/categories/:id/:id', to: 'categories#show_sub', as: 'sub'
+
+  # get '/categories/:id/:id', to: 'categories#show_sub', as: 'sub' do
+  #   resources :categories, only: [:show]
+  # end
 
   # resources :categories, only: [:show_sub]
+
+  resources :categories, only: [:show] do
+    get '/categories/:id/', to: 'categories#show_sub', as: 'sub'
+  end
 end
