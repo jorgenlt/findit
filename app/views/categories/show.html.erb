@@ -1,10 +1,10 @@
 <div class="category-container">
+  <h2>show.html.erb</h2>
   <h1><%= @category.category_name.capitalize %></h1>
 </div>
 <ul>
   <% @sub_categories.each do |sub| %>
-    <%#= link_to '', category_sub_path(9) do %>
-      <li><%= sub.category_name.capitalize %></li>
-    <%# end %>
+      <li><%= link_to sub.category_name.capitalize, category_sub_path(sub) %></li>
+      <p><%= sub.id %></p>
   <% end %>
 </ul>
