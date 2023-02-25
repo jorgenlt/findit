@@ -4,4 +4,19 @@
   <h3>category id: <%= @sub_category.id %></h3>
   <h3>parent category is: <%= @parent_category.category_name %></h3>
   <h3>parent_category id: <%= @parent_category.id %></h3>
+
+  <% @posts.each do |post| %>
+    <%= link_to post_path(post) do %>
+      <%= image_tag post.image_url, width: "300px" %>
+      <p>title: <%= post.post_title %></p>
+      <p>body: <%= post.post_body %></p>
+      <p>price: <%= post.price %> kr</p>
+      <p>category: <%= post.category_id %></p>
+      <p>sub_category: <%= post.sub_category_id %></p>
+      <p>user_id: <%= post.user_id %></p>
+      <p>seller: <%= User.find(post.user_id).first_name %> <%= User.find(post.user_id).last_name %></p>
+      <p><%= link_to User.find(post.user_id).email, "mailto:#{User.find(post.user_id).email}" %></p>
+      <p>properties:</p>
+    <% end %>
+  <% end %>
 </div>
