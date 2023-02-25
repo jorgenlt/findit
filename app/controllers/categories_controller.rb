@@ -10,5 +10,6 @@ class CategoriesController < ApplicationController
     # raise
     @sub_category = Category.find(params[:category_id])
     @parent_category = Category.find(params[:id])
+    @posts = Post.where(category_id: params[:id], sub_category_id: params[:category_id])
   end
 end

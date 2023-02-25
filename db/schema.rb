@@ -34,7 +34,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_175220) do
     t.string "post_title"
     t.string "post_body"
     t.integer "price"
+    t.string "image_url"
     t.boolean "is_active"
+    t.integer "sub_category_id"
     t.bigint "user_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false

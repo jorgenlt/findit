@@ -1,0 +1,16 @@
+<div style="padding-top: 70px;">
+  <h2>show#posts</h2>
+  <%= image_tag @post.image_url, width: "300px" %>
+      <p>title: <%= @post.post_title %></p>
+      <p>body: <%= @post.post_body %></p>
+      <p>price: <%= @post.price %> kr</p>
+      <p>category_id: <%= @post.category_id %></p>
+      <p>category: <%= Category.find(@post.category_id).category_name %></p>
+      <p>sub_category_id: <%= @post.sub_category_id %></p>
+      <p>sub_category: <%= Category.find(@post.sub_category_id).category_name %></p>
+      <p>user_id: <%= @post.user_id %></p>
+      <p>seller: <%= User.find(@post.user_id).first_name %> <%= User.find(@post.user_id).last_name %></p>
+      <p><%= link_to User.find(@post.user_id).email, "mailto:#{User.find(@post.user_id).email}" %></p>
+      <p>properties:</p>
+
+</div>

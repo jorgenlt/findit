@@ -1,0 +1,12 @@
+<div class="category-container">
+  <h2>new#posts</h2>
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.input :post_title %>
+    <%= f.input :post_body %>
+    <%= f.input :price %>
+    <%= f.input :category_id %>
+    <%= f.input :sub_category_id %>
+    <%= f.submit %>
+  <% end %>
+
+</div>

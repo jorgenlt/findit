@@ -167,7 +167,26 @@ boats.each do |sub|
 end
 puts "-> #{boats.size} sub-categories was created."
 
+puts 'creating posts'
 
+puts 'bicycles'
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2015/06/09/00/10/modern-802751__480.jpg', price: 400, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2020/09/13/09/50/mountain-bike-5567847__480.jpg', price: 550, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2020/06/24/13/41/bike-5336239__480.jpg', price: 300, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2021/04/24/15/54/bicycle-6204404__480.png', price: 640, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2020/04/19/10/47/ebike-5063056__480.jpg', price: 590, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2012/10/17/14/20/bike-61905__480.jpg', price: 490, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2015/03/11/15/52/bike-668794__480.jpg', price: 800, category_id: 1, sub_category_id: 9)
+Post.create(user_id: 1, post_title: 'Nice electrical bike, like new', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2021/07/10/09/51/electric-cargo-bike-6401039__480.jpg', price: 900, category_id: 1, sub_category_id: 9)
+
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2019/10/09/00/03/bicycle-4536185__480.jpg', price: 400, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2017/06/28/22/17/bike-2452354__480.jpg', price: 550, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2017/04/26/10/30/bike-2262232__480.jpg', price: 300, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2015/06/29/16/56/old-bicycle-825724__480.jpg', price: 640, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2015/09/05/08/14/bike-924153__480.jpg', price: 590, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2014/08/27/19/05/bike-429412__480.jpg', price: 490, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2015/01/24/01/58/bicycle-609652__480.jpg', price: 800, category_id: 1, sub_category_id: 10)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2016/11/20/10/19/bike-1842443__480.jpg', price: 900, category_id: 1, sub_category_id: 10)
 
 
 
