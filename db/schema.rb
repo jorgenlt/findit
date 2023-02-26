@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_175220) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
+    t.string "fa_icon"
     t.integer "parent_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
