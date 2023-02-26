@@ -54,8 +54,51 @@ categories = [
   'boats'
 ]
 
+icons = {
+  bicycles: 'fa-solid fa-bicycle',
+  electronics: 'fa-solid fa-mobile',
+  home: 'fa-solid fa-house-chimney-window',
+  pets: 'fa-solid fa-dog',
+  sports: 'fa-solid fa-volleyball',
+  vehicles: 'fa-solid fa-car-side',
+  work: 'fa-solid fa-briefcase',
+  boats: 'fa-solid fa-sailboat',
+  electrical: 'fa-solid fa-bolt',
+  hybrid: 'fa-solid fa-bicycle',
+  offroad: 'fa-solid fa-bicycle',
+  racer: 'fa-solid fa-bicycle',
+  other: 'fa-solid fa-bicycle',
+  computers: 'fa-solid fa-computer',
+  photo: 'fa-solid fa-camera',
+  tv: 'fa-solid fa-tv',
+  household: 'fa-regular fa-hard-drive',
+  smartphones: 'fa-solid fa-mobile',
+  furniture: 'fa-solid fa-couch',
+  lamps: 'fa-solid fa-lightbulb',
+  kitchen: 'fa-solid fa-kitchen-set',
+  bird: 'fa-solid fa-kiwi-bird',
+  cat: 'fa-solid fa-cat',
+  dog: 'fa-solid fa-dog',
+  fish: 'fa-solid fa-fish',
+  horse: 'fa-solid fa-horse',
+  ballsport: 'fa-solid fa-volleyball',
+  golf: 'fa-solid fa-golf-ball-tee',
+  outdoors: 'fa-solid fa-tent',
+  winter: 'fa-solid fa-snowflake',
+  water: 'fa-solid fa-water',
+  car: 'fa-solid fa-car-side',
+  motorcycle: 'fa-solid fa-motorcycle',
+  truck: 'fa-solid fa-truck',
+  fulltime: 'fa-solid fa-circle',
+  parttime: 'fa-solid fa-circle-half-stroke',
+  sailboat: 'fa-solid fa-sailboat',
+  speedboat: 'fa-solid fa-ship',
+  yacht: 'fa-solid fa-anchor'
+}
+
 categories.each do |category|
-  Category.create(category_name: category)
+  Category.create(category_name: category, fa_icon: icons[category.to_sym])
+  puts "#{icons[category.to_sym]}"
   puts "...#{category} added"
 end
 
@@ -70,10 +113,10 @@ bicycles = [
   'hybrid',
   'offroad',
   'racer',
-  'other bikes'
+  'other'
 ]
 bicycles.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'bicycles').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'bicycles').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{bicycles.size} sub-categories was created."
@@ -81,13 +124,13 @@ puts "-> #{bicycles.size} sub-categories was created."
 puts 'creating sub-categories for electronics'
 electronics = [
   'computers',
-  'photo and video',
+  'photo',
   'tv',
-  'household appliances',
-  'smart phones'
+  'household',
+  'smartphones'
 ]
 electronics.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'electronics').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'electronics').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{electronics.size} sub-categories was created."
@@ -95,11 +138,11 @@ puts "-> #{electronics.size} sub-categories was created."
 puts 'creating sub-categories for home'
 home = [
   'furniture',
-  'lamps and lights',
+  'lamps',
   'kitchen'
 ]
 home.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'home').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'home').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{home.size} sub-categories was created."
@@ -113,7 +156,7 @@ pets = [
   'horse'
 ]
 pets.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'pets').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'pets').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{pets.size} sub-categories was created."
@@ -127,7 +170,7 @@ sports = [
   'water'
 ]
 sports.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'sports').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'sports').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{sports.size} sub-categories was created."
@@ -139,18 +182,18 @@ vehicles = [
   'truck'
 ]
 vehicles.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'vehicles').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'vehicles').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{vehicles.size} sub-categories was created."
 
 puts 'creating sub-categories for work'
 work = [
-  'full-time',
-  'part-time',
+  'fulltime',
+  'parttime'
 ]
 work.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'work').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'work').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{work.size} sub-categories was created."
@@ -162,7 +205,7 @@ boats = [
   'yacht'
 ]
 boats.each do |sub|
-  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'boats').id)
+  Category.create(category_name: sub, parent_category_id: Category.find_by(category_name: 'boats').id, fa_icon: icons[sub.to_sym])
   puts "...#{sub} added"
 end
 puts "-> #{boats.size} sub-categories was created."
