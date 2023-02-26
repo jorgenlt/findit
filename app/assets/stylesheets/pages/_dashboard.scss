@@ -1,4 +1,4 @@
-.body-container {
+.body-container, .sub-category-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,17 +25,22 @@
   width: 100%;
 }
 
-.categories {
-  justify-content: center;
+.categories, .sub-categories {
   margin: 70px 0px;
+  gap: 40px 0px;
+  width: 100%;
 }
 
-.category-link {
+.category, .sub-category {
+  padding: 20px 20px;
+  min-width: 120px;
+}
+
+.category-link, .sub-category-link {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px 10px;
 
   i {
     font-size: 40px;
@@ -46,18 +51,17 @@
   }
 }
 
-.trending {
+.trending, .all-posts {
   display: flex;
-  justify-content: center;
   margin: 40px 0px;
 }
 
-.trending-card {
+.trending-card, .all-posts-card {
   display: flex;
   justify-content: center;
 }
 
-.trending-link {
+.trending-link, .all-posts-link {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -69,12 +73,12 @@
   }
 }
 
-.trending-location {
+.trending-location, .all-posts-location {
   font-size: 12px;
   margin: 5px 0px;
 }
 
-.trending-description {
+.trending-description, .all-posts-description {
   font-weight: 600;
   margin: 0px 0px 5px 0px;
 }

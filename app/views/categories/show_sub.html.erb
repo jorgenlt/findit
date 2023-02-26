@@ -1,22 +1,30 @@
-<div class="category-container">
-  <h2>#show_sub</h2>
-  <h3>category name: <%= @sub_category.category_name %></h3>
-  <h3>category id: <%= @sub_category.id %></h3>
-  <h3>parent category is: <%= @parent_category.category_name %></h3>
-  <h3>parent_category id: <%= @parent_category.id %></h3>
-
-  <% @posts.each do |post| %>
-    <%= link_to post_path(post) do %>
-      <%= image_tag post.image_url, width: "300px" %>
-      <p>title: <%= post.post_title %></p>
-      <p>body: <%= post.post_body %></p>
-      <p>price: <%= post.price %> kr</p>
-      <p>category: <%= post.category_id %></p>
-      <p>sub_category: <%= post.sub_category_id %></p>
-      <p>user_id: <%= post.user_id %></p>
-      <p>seller: <%= User.find(post.user_id).first_name %> <%= User.find(post.user_id).last_name %></p>
-      <p><%= link_to User.find(post.user_id).email, "mailto:#{User.find(post.user_id).email}" %></p>
-      <p>properties:</p>
+<div class="sub-category-container">
+  <div class="dashboard-search">
+    <input class="form-control" type="search" placeholder="Search for stuff" arialabel="search">
+    <button class="btn btn-primary" type="submit" arialabel="search">Search</button>
+  </div>
+  <div class="row row-cols-4 sub-categories">
+    <% @sub_categories.each do |sub| %>
+      <div class="col sub-category">
+        <%= link_to category_sub_path(sub), class: "sub-category-link" do %>
+            <i class="<%= sub.fa_icon %>"></i>
+            <span><%= sub.category_name.capitalize %></span>
+        <% end %>
+      </div>
     <% end %>
-  <% end %>
+  </div>
+
+  <h2><%= @sub_category.category_name.capitalize %></h2>
+  <div class="row row-cols-3 all-posts">
+    <% @posts.each do |post| %>
+      <div class="col all-posts-card">
+        <%= link_to post_path(post), class: "all-posts-link" do %>
+          <%= image_tag post.image_url, alt: 'all-posts-photo' %>
+          <p class="all-posts-location">Oslo</p>
+          <p class="all-posts-description"><%= post.post_title %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>

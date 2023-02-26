@@ -1,19 +1,31 @@
-<div class="category-container">
+<div class="sub-category-container">
   <div class="dashboard-search">
     <input class="form-control" type="search" placeholder="Search for stuff" arialabel="search">
     <button class="btn btn-primary" type="submit" arialabel="search">Search</button>
   </div>
-  <h2>show.html.erb</h2>
-  <h1><%= @category.category_name.capitalize %></h1>
-  <div class="row row-cols-4 categories">
+  <div class="row row-cols-4 sub-categories">
     <% @sub_categories.each do |sub| %>
-      <div class="col">
-        <%= link_to category_sub_path(sub), class: "category-link" do %>
+      <div class="col sub-category">
+        <%= link_to category_sub_path(sub), class: "sub-category-link" do %>
             <i class="<%= sub.fa_icon %>"></i>
-            <span><%= sub.category_name %></span>
+            <span><%= sub.category_name.capitalize %></span>
         <% end %>
       </div>
     <% end %>
-
   </div>
+
+
+  <h2>All <%= @category.category_name %></h2>
+  <div class="row row-cols-3 all-posts">
+    <% @posts.each do |post| %>
+      <div class="col all-posts-card">
+        <%= link_to post_path(post), class: "all-posts-link" do %>
+          <%= image_tag post.image_url, alt: 'all-posts-photo' %>
+          <p class="all-posts-location">Oslo</p>
+          <p class="all-posts-description"><%= post.post_title %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
 </div>
