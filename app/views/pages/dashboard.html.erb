@@ -10,49 +10,49 @@
 
   <div class="row row-cols-4 categories">
 
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'bicycles')), class: "category-link" do %>
           <i class="fa-solid fa-bicycle"></i>
           <span>Bicycles</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'electronics')), class: "category-link" do %>
           <i class="fa-solid fa-mobile"></i>
           <span>Electronics</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'home')), class: "category-link" do %>
           <i class="fa-solid fa-house-chimney-window"></i>
           <span>Home</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'pets')), class: "category-link" do %>
           <i class="fa-solid fa-dog"></i>
           <span>Pets</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'sports')), class: "category-link" do %>
           <i class="fa-solid fa-volleyball"></i>
           <span>Sports</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'vehicles')), class: "category-link" do %>
           <i class="fa-solid fa-car-side"></i>
           <span>Vehicles</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'work')), class: "category-link" do %>
           <i class="fa-solid fa-briefcase"></i>
           <span>Work</span>
       <% end %>
     </div>
-    <div class="col">
+    <div class="col category">
       <%= link_to category_path(Category.find_by(category_name: 'boats')), class: "category-link" do %>
           <i class="fa-solid fa-sailboat"></i>
           <span>Boats</span>
@@ -61,7 +61,6 @@
   </div>
 
   <div class="row row-cols-3 trending">
-
     <div class="col trending-card">
       <a href="#" class=" trending-link">
         <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
@@ -104,8 +103,5 @@
         <p class="trending-description">Description</p>
       </a>
     </div>
-
-
-
   </div>
 </div>
