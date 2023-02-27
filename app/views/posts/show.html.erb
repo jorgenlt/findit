@@ -4,7 +4,7 @@
       <p>
         <%= link_to @category_name, category_path(@category) %>
         <i class="fa-solid fa-arrow-right ms-2 me-2"></i>
-        <%= link_to @sub_category_name, category_sub_path(@sub_category) %>
+        <%= link_to @sub_category_name, category_sub_path(@sub_category, @category) %>
       </p>
     </div>
 
