@@ -10,12 +10,13 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
-  def index
-    @post = Post.all
-  end
-
   def show
     @post = Post.find(params[:id])
+    @category = Category.find(@post.category_id)
+    @category_name = @category.category_name.capitalize
+    @sub_category = Category.find(@post.sub_category_id)
+    @sub_category_name = @sub_category.category_name.capitalize
+    @seller = User.find(@post.user_id)
   end
 
   private
