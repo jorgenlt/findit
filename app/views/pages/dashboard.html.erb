@@ -9,99 +9,36 @@
   </div>
 
   <div class="row row-cols-4 categories">
-
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'bicycles')), class: "category-link" do %>
-          <i class="fa-solid fa-bicycle"></i>
-          <span>Bicycles</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'electronics')), class: "category-link" do %>
-          <i class="fa-solid fa-mobile"></i>
-          <span>Electronics</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'home')), class: "category-link" do %>
-          <i class="fa-solid fa-house-chimney-window"></i>
-          <span>Home</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'pets')), class: "category-link" do %>
-          <i class="fa-solid fa-dog"></i>
-          <span>Pets</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'sports')), class: "category-link" do %>
-          <i class="fa-solid fa-volleyball"></i>
-          <span>Sports</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'vehicles')), class: "category-link" do %>
-          <i class="fa-solid fa-car-side"></i>
-          <span>Vehicles</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'work')), class: "category-link" do %>
-          <i class="fa-solid fa-briefcase"></i>
-          <span>Work</span>
-      <% end %>
-    </div>
-    <div class="col category">
-      <%= link_to category_path(Category.find_by(category_name: 'boats')), class: "category-link" do %>
-          <i class="fa-solid fa-sailboat"></i>
-          <span>Boats</span>
-      <% end %>
-    </div>
+    <% categories = ['bicycles', 'electronics', 'home', 'pets', 'sports', 'vehicles', 'work', 'boats'] %>
+    <% categories.each do |cat_name| %>
+      <% category = Category.find_by(category_name: cat_name) %>
+      <div class="col category">
+        <%= link_to category_path(category), class: "category-link" do %>
+          <i class="<%= category.fa_icon %>"></i>
+          <span><%= category.category_name %></span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="row row-cols-3 trending">
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
-    <div class="col trending-card">
-      <a href="#" class=" trending-link">
-        <%= image_tag 'example_ad.jpg', alt: 'trending-photo' %>
-        <p class="trending-location">Location</p>
-        <p class="trending-description">Description</p>
-      </a>
-    </div>
+  <h2>Trending</h2>
+  <div class="row row-cols-3 all-posts">
+    <%# creating an array of n unique random numbers in an interval %>
+    <% (1..81).to_a.sort{ rand() - 0.5 }[0...18].each do |rand| %>
+      <% random_post = Post.find(rand) %>
+      <div class="col all-posts-card">
+        <%= link_to post_path(random_post), class: "all-posts-link" do %>
+          <% if random_post.image_url == nil %>
+            <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'Photo coming soon' %>
+          <% else %>
+            <%= image_tag random_post.image_url, alt: 'all-posts-photo' %>
+          <% end %>
+          <p class="all-posts-location">Oslo</p>
+          <p class="all-posts-description"><%= random_post.post_title.capitalize %></p>
+          <span>€ <%= random_post.price %></span>
+        <% end %>
+      </div>
+    <% end %>
   </div>
+
 </div>

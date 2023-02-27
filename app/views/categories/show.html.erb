@@ -26,7 +26,7 @@
             <%= image_tag post.image_url, alt: 'all-posts-photo' %>
           <% end %>
           <p class="all-posts-location">Oslo</p>
-          <p class="all-posts-description"><%= post.post_title %></p>
+          <p class="all-posts-description"><%= post.post_title.capitalize %></p>
         <% end %>
       </div>
     <% end %>

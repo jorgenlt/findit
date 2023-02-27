@@ -53,7 +53,11 @@
 
 .trending, .all-posts {
   display: flex;
-  margin: 40px 0px;
+  margin: 0px 0px;
+
+  a {
+    color: $black;
+  }
 }
 
 .trending-card, .all-posts-card {
@@ -74,6 +78,10 @@
     object-fit: cover;
     object-position: 50% 50%;
     border-radius: 5px;
+  }
+
+  span {
+    font-size: 12px;
   }
 }
 

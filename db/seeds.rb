@@ -251,7 +251,7 @@ Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very li
 
 Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2022/01/19/19/41/san-francisco-6950837__480.jpg', price: 400, category_id: 1, sub_category_id: 13)
 Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2018/01/06/23/25/snow-3066167__480.jpg', price: 550, category_id: 1, sub_category_id: 13)
-Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2022/07/24/19/42/bike-7342379__480.png.jpg', price: 300, category_id: 1, sub_category_id: 13)
+Post.create(user_id: 1, post_title: 'Cool bicycle for sale', post_body: 'Very little used. Come check it out.', image_url: 'https://cdn.pixabay.com/photo/2022/07/24/19/42/bike-7342379__480.png', price: 300, category_id: 1, sub_category_id: 13)
 puts '-> bicycles created'
 
 puts 'creating electronics'

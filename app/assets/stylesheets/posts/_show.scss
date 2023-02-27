@@ -29,6 +29,8 @@
 }
 
 .post-info {
+  color: $black;
+
   h1 {
     margin-bottom: 10px;
   }
@@ -47,11 +49,12 @@
 
   span {
     font-size: 14px;
+    color: $black;
   }
 
   p {
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 500;
   }
 
   a {
