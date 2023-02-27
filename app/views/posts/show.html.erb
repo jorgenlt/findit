@@ -1,22 +1,31 @@
-<div style="padding-top: 70px;">
-  <h2>show#posts</h2>
-  
-  <% if @post.image_url == nil %>
-    <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'all-posts-photo' %>
-  <% else %>
-    <%= image_tag @post.image_url, alt: 'ad-photo' %>
-  <% end %>
+<div class="post-container">
+  <div class="post">
+    <div class="browse">
+      <p>
+        <%= link_to @category_name, category_path(@category) %>
+        <i class="fa-solid fa-arrow-right ms-2 me-2"></i>
+        <%= link_to @sub_category_name, category_sub_path(@sub_category) %>
+      </p>
+    </div>
 
-  <p>title: <%= @post.post_title %></p>
-  <p>body: <%= @post.post_body %></p>
-  <p>price: <%= @post.price %> kr</p>
-  <p>category_id: <%= @post.category_id %></p>
-  <p>category: <%= Category.find(@post.category_id).category_name %></p>
-  <p>sub_category_id: <%= @post.sub_category_id %></p>
-  <p>sub_category: <%= Category.find(@post.sub_category_id).category_name %></p>
-  <p>user_id: <%= @post.user_id %></p>
-  <p>seller: <%= User.find(@post.user_id).first_name %> <%= User.find(@post.user_id).last_name %></p>
-  <p><%= link_to User.find(@post.user_id).email, "mailto:#{User.find(@post.user_id).email}" %></p>
-  <p>properties:</p>
+    <%# image %>
+    <% if @post.image_url == nil %>
+      <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'Photo coming soon' %>
+    <% else %>
+      <%= image_tag @post.image_url, alt: @sub_category_name %>
+    <% end %>
 
+    <div class="price">
+      <span>For sale</span>
+      <p>€ <%= @post.price %></p>
+      <%= link_to 'Contact seller', "mailto:#{@seller.email}", class: "btn btn-primary", role: "button" %>
+    </div>
+
+    <div class="post-info">
+      <h1><%= @post.post_title %></h1>
+      <h2>Description</h2>
+      <p><%= @post.post_body %></p>
+    </div>
+
+  </div>
 </div>
