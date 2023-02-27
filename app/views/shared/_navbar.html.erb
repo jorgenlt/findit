@@ -1,7 +1,11 @@
 <div class="navbar-container">
 
   <div class="navbar">
-    <div class="logo"><%= link_to 'Logo', root_path %></div>
+    <div class="logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'findit.png', height: "25px" %>
+      <% end %>
+    </div>
     <div class="links">
       <ul class="navbar-links">
         <% if user_signed_in? %>
