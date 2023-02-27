@@ -4,8 +4,43 @@
 
 <div class="body-container">
   <div class="dashboard-search">
-    <input class="form-control" type="search" placeholder="Search for stuff" arialabel="search">
-    <button class="btn btn-primary" type="submit" arialabel="search">Search</button>
+    <%= form_with url: root_path, method: :get, class: "d-flex w-100" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control field-search",
+        placeholder: "Search for stuff"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <div class="search-results w-100">
+    <% unless @search_results == nil %>
+      <% if @search_results.empty? %>
+        <div class="mt-5">
+          <h3>No results for your search.</h3>
+        </div>
+      <% else %>
+        <h2 class="mt-5">Search results</h2>
+        <div class="row row-cols-3 all-posts">
+          <% @search_results.each do |post| %>
+            <%# creating an array of n unique random numbers in an interval %>
+              <div class="col all-posts-card">
+                <%= link_to post_path(post), class: "all-posts-link" do %>
+                  <% if post.image_url == nil %>
+                    <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'Photo coming soon' %>
+                  <% else %>
+                    <%= image_tag post.image_url, alt: 'all-posts-photo' %>
+                  <% end %>
+                  <p class="all-posts-location">Oslo</p>
+                  <p class="all-posts-description"><%= post.post_title.capitalize %></p>
+                  <span>€ <%= post.price %></span>
+                <% end %>
+              </div>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="row row-cols-4 categories">
@@ -15,13 +50,17 @@
       <div class="col category">
         <%= link_to category_path(category), class: "category-link" do %>
           <i class="<%= category.fa_icon %>"></i>
-          <span><%= category.category_name %></span>
+          <span><%= category.category_name.capitalize %></span>
         <% end %>
       </div>
     <% end %>
   </div>
 
-  <h2>Trending</h2>
+
+
+  <div class="w-100">
+    <h2>Trending</h2>
+  </div>
   <div class="row row-cols-3 all-posts">
     <%# creating an array of n unique random numbers in an interval %>
     <% (1..81).to_a.sort{ rand() - 0.5 }[0...18].each do |rand| %>
