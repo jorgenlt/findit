@@ -1,12 +1,94 @@
-<div class="category-container">
-  <h2>new#posts</h2>
-  <%= simple_form_for(@post) do |f| %>
-    <%= f.input :post_title %>
-    <%= f.input :post_body %>
-    <%= f.input :price %>
-    <%= f.input :category_id %>
-    <%= f.input :sub_category_id %>
-    <%= f.submit %>
-  <% end %>
+<div class="body-container">
+  <div class="new-post">
+    <h2>Create a new post</h2>
+    <%= simple_form_for @post, html: { class: 'form-horizontal' } do |f| %>
+      <%= f.input :post_title, label: 'Title' %>
+      <%= f.input :post_body, as: :text, label: 'Body' %>
+      <div class="d-flex">
+        <div class="me-3 price-field">
+          <%= f.input :price, label: 'Price' %>
+        </div>
+        <div class="mb-3 me-3 select-cat">
+          <label class="form-label string optional" for="post_category_id">Category</label>
+          <select class="form-control" id="category-select" name="post[category_id]">
+            <option value="">Select a category</option>
+          </select>
+        </div>
+        <div class="mb-3 select-sub">
+          <label class="form-label string optional" for="post_sub_category_id">Subcategory</label>
+          <select class="form-control" id="subcategory-select" name="post[sub_category_id]">
+            <option value="">Select a subcategory</option>
+          </select>
+        </div>
+      </div>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+
+
 
 </div>
+
+<script>
+  const data = [
+    {
+      category: 'Bicycles',
+      subcategories: ["Electrical", "Hybrid", "Offroad", "Racer", "Other"]
+    },
+    {
+      category: 'Electronics',
+      subcategories: ["Computers", "Photo", "TV", "Household", "Smartphones"]
+    },
+    {
+      category: 'Home',
+      subcategories: ["Furniture", "Lamps", "Kitchen"]
+    },
+    {
+      category: 'Pets',
+      subcategories: ["Bird", "Cat", "Dog", "Fish", "Horse"]
+    },
+    {
+      category: 'Sports',
+      subcategories: ["Ballsport", "Golf", "Outdoors", "Winter", "Water"]
+    },
+    {
+      category: 'Vehicles',
+      subcategories: ["Car", "Motorcycle", "Truck"]
+    },
+    {
+      category: 'Work',
+      subcategories: ["Fulltime", "Parttime"]
+    },
+    {
+      category: 'Boats',
+      subcategories: ["Sailboat", "Speedboat", "Yacht"]
+    }
+  ];
+
+
+  const categorySelect = document.getElementById('category-select');
+
+  data.forEach(item => {
+    const option = document.createElement('option');
+    option.text = item.category;
+    categorySelect.add(option);
+  });
+
+  const subcategorySelect = document.getElementById('subcategory-select');
+
+
+  categorySelect.addEventListener('change', (event) => {
+    const category = event.target.value;
+    const selectedData = data.find(item => item.category === category);
+
+    subcategorySelect.innerHTML = '';
+    selectedData.subcategories.forEach(subcategory => {
+      const option = document.createElement('option');
+      option.text = subcategory;
+      subcategorySelect.add(option);
+    });
+  });
+
+
+
+</script>
