@@ -62,7 +62,8 @@
 
 .trending-card, .all-posts-card {
   display: flex;
-  justify-content: center;
+  justify-content: start;
+  flex-direction: column;
 }
 
 .trending-link, .all-posts-link {
