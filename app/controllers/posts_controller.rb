@@ -1,15 +1,7 @@
 class PostsController < ApplicationController
   def new
     @post = Post.new
-    # @categories = Category.where(parent_category_id: nil)
-
-    # @sub_categories = Category.where.not(parent_category_id: nil)
-
   end
-
-
-
-
 
   def create
     category_id = Category.find_by(category_name: post_params[:category_id].downcase).id
@@ -18,8 +10,11 @@ class PostsController < ApplicationController
     @post.category_id = category_id
     @post.sub_category_id = sub_category_id
     @post.user_id = current_user.id
-    @post.save
-    redirect_to root_path
+    if @post.save
+      redirect_to @post
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def show

@@ -1,5 +1,5 @@
 <div class="body-container">
-  <div class="new-post">
+  <div class="new-post" data-controller="new-post">
     <h2>Create a new post</h2>
     <%= simple_form_for @post, html: { class: 'form-horizontal' } do |f| %>
       <%= f.input :post_title, label: 'Title' %>
@@ -10,13 +10,13 @@
         </div>
         <div class="mb-3 me-3 select-cat">
           <label class="form-label string optional" for="post_category_id">Category</label>
-          <select class="form-control" id="category-select" name="post[category_id]">
+          <select data-action="change->new-post#changeSub" data-new-post-target="category" class="form-control" id="category-select" name="post[category_id]">
             <option value="">Select a category</option>
           </select>
         </div>
         <div class="mb-3 select-sub">
           <label class="form-label string optional" for="post_sub_category_id">Subcategory</label>
-          <select class="form-control" id="subcategory-select" name="post[sub_category_id]">
+          <select data-new-post-target="subcategory" class="form-control" id="subcategory-select" name="post[sub_category_id]">
             <option value="">Select a subcategory</option>
           </select>
         </div>
@@ -24,9 +24,6 @@
       <%= f.button :submit, class: 'btn btn-primary' %>
     <% end %>
   </div>
-
-
-
 </div>
 
 <script>
