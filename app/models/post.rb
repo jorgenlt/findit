@@ -6,4 +6,6 @@ class Post < ApplicationRecord
   pg_search_scope :search_posts,
     against: [ :post_title, :post_body ],
       using: { tsearch: { prefix: true } }
+
+  has_one_attached :photo
 end

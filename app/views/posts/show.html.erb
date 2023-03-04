@@ -9,11 +9,7 @@
     </div>
 
     <%# image %>
-    <% if @post.image_url == nil %>
-      <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'Photo coming soon' %>
-    <% else %>
-      <%= image_tag @post.image_url, alt: @sub_category_name %>
-    <% end %>
+    <%= attached_photo(@post, 800) %>
 
     <div class="price">
       <span>For sale</span>
