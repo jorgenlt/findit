@@ -27,11 +27,7 @@
             <%# creating an array of n unique random numbers in an interval %>
               <div class="col all-posts-card">
                 <%= link_to post_path(post), class: "all-posts-link" do %>
-                  <% if post.image_url == nil %>
-                    <%= image_tag 'https://exploretryon.com/wp-content/uploads/2018/08/ET-IMAGE-COMING-SOON-1000.jpg', alt: 'Photo coming soon' %>
-                  <% else %>
-                    <%= image_tag post.image_url, alt: 'all-posts-photo' %>
-                  <% end %>
+                  <%= attached_photo(post, 400) %>
                   <p class="all-posts-location">Oslo</p>
                   <p class="all-posts-description"><%= post.post_title.capitalize %></p>
                   <span>€ <%= post.price %></span>
