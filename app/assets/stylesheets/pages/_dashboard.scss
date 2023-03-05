@@ -58,6 +58,13 @@
   a {
     color: $black;
   }
+
+  img {
+    &:hover {
+      transition: 500ms;
+      filter: brightness(1.05) contrast(1.15) saturate(1.15);
+    }
+  }
 }
 
 .trending-card, .all-posts-card {

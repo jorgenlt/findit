@@ -8,7 +8,9 @@ class PostsController < ApplicationController
     sub_category_id = Category.find_by(category_name: post_params[:sub_category_id].downcase).id
     @post = Post.new(post_params)
     @post.category_id = category_id
+    @post.category_name = Category.find(category_id).category_name
     @post.sub_category_id = sub_category_id
+    @post.sub_category_name = Category.find(sub_category_id).category_name
     @post.user_id = current_user.id
     if @post.save
       redirect_to @post
