@@ -4,6 +4,11 @@
 
 <div class="body-container">
   <div class="dashboard-search">
+    <div class="mobile-logo">
+      <%= link_to root_path do %>
+        <%= image_tag 'findit.png', height: "25px" %>
+      <% end %>
+    </div>
     <%= form_with url: root_path, method: :get, class: "d-flex w-100" do %>
       <%= text_field_tag :query,
         params[:query],
