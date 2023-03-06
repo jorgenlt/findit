@@ -80,3 +80,5 @@ end
 gem 'pg_search'
 
 gem 'cloudinary', '~> 1.25'
+
+gem 'dockerfile-rails', '~> 0.0.1'
