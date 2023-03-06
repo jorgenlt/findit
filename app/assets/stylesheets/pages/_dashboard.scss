@@ -16,7 +16,11 @@
 }
 
 .devise-container {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .dashboard-search {
@@ -74,8 +78,14 @@
 
 .trending-card, .all-posts-card {
   display: flex;
-  justify-content: start;
-  flex-direction: column;
+  justify-content: center;
+  // flex-direction: column;
+
+  .post-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 .trending-link, .all-posts-link {
@@ -159,6 +169,7 @@
 
   .dashboard-search {
     position: fixed;
+    z-index: 99;
     background-color: $body-bg;
     flex-direction: column;
     padding-bottom: 10px;
@@ -172,7 +183,25 @@
   }
 
   .categories, .sub-categories {
-    margin: 90px 0px;
+    margin: 90px 0px 20px 0px;
+    gap: 0px 0px;
+  }
+
+  .trending-link, .all-posts-link {
+
+    img {
+      width: 90vw;
+    }
+  }
+
+  .devise-container {
+    .devise-links {
+      width: 80vw;
+    }
+
+    form {
+      width: 80vw;
+    }
   }
 
   footer {

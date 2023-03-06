@@ -29,7 +29,6 @@
         <h2 class="mt-5">Search results</h2>
         <div class="row row-cols-3 all-posts">
           <% @search_results.each do |post| %>
-            <%# creating an array of n unique random numbers in an interval %>
               <div class="col all-posts-card">
                 <%= link_to post_path(post), class: "all-posts-link" do %>
                   <%= attached_photo(post, 400) %>
@@ -60,7 +59,7 @@
 
 
 
-  <div class="w-100">
+  <div class="w-100 ms-4">
     <h2>Trending</h2>
   </div>
   <div class="row all-posts">
@@ -74,9 +73,11 @@
           <% else %>
             <%= image_tag random_post.image_url, alt: 'all-posts-photo' %>
           <% end %>
-          <p class="all-posts-location">Oslo</p>
-          <p class="all-posts-description"><%= random_post.post_title.capitalize %></p>
-          <span>€ <%= random_post.price %></span>
+          <div class="post-details">
+            <p class="all-posts-location">Oslo</p>
+            <p class="all-posts-description"><%= random_post.post_title.capitalize %></p>
+            <span>€ <%= random_post.price %></span>
+          </div>
         <% end %>
       </div>
     <% end %>

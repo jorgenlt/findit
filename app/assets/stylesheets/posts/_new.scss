@@ -21,3 +21,13 @@
 .select-sub {
   width: 200px;
 }
+
+@media only screen and (max-width: 600px) {
+  .new-post {
+    margin: 20px;
+
+    form {
+      width: auto;
+    }
+  }
+}
