@@ -14,8 +14,8 @@
     <% end %>
   </div>
 
-  <h2><%= @sub_category.category_name.capitalize %></h2>
-  <div class="row row-cols-3 all-posts">
+  <h2 class="ms-4"><%= @sub_category.category_name.capitalize %></h2>
+  <div class="row all-posts">
     <% @posts.each do |post| %>
       <div class="col all-posts-card">
         <%= link_to post_path(post), class: "all-posts-link" do %>
