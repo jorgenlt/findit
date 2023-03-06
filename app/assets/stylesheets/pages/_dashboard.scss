@@ -1,4 +1,4 @@
-.body-container, .sub-category-container {
+  .body-container, .sub-category-container {
   display: flex;
   flex-direction: column;
   max-width: 1000px;
@@ -29,6 +29,10 @@
   margin: 70px 0px;
   gap: 40px 0px;
   width: 100%;
+
+  .empty-cat {
+    display: none;
+  }
 }
 
 .category, .sub-category {
@@ -57,6 +61,7 @@
 
   a {
     color: $black;
+    align-items: center;
   }
 
   img {
@@ -102,4 +107,22 @@
 .trending-description, .all-posts-description {
   font-weight: 500;
   margin: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .body-container {
+    padding: 0px 0px;
+  }
+
+  .categories {
+    justify-content: center;
+
+    .empty-cat {
+      display: flex;
+    }
+  }
+
+  .navbar-container {
+    display: none;
+  }
 }

@@ -50,6 +50,7 @@
         <% end %>
       </div>
     <% end %>
+    <div class="col category empty-cat"></div>
   </div>
 
 
@@ -57,7 +58,7 @@
   <div class="w-100">
     <h2>Trending</h2>
   </div>
-  <div class="row row-cols-3 all-posts">
+  <div class="row all-posts">
     <%# creating an array of n unique random numbers in an interval %>
     <% (1..81).to_a.sort{ rand() - 0.5 }[0...18].each do |rand| %>
       <% random_post = Post.find(rand) %>
