@@ -342,11 +342,44 @@ water = ['https://cdn.pixabay.com/photo/2017/06/10/22/27/diving-mask-2390958__48
 water.each do |pic|
   Post.create(user_id: 2, post_title: 'Swim goggles', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(5..30), category_id: 5, sub_category_id: 31, category_name:'sports', sub_category_name: 'water')
 end
-
-
-
-
 puts '->sports created'
+
+puts 'creating vehicles'
+car = ['https://cdn.pixabay.com/photo/2018/05/19/08/50/car-3412965__480.jpg', 'https://cdn.pixabay.com/photo/2015/04/16/03/35/okinawa-724985__480.jpg', 'https://cdn.pixabay.com/photo/2021/08/17/18/27/honda-6553834__480.jpg', 'https://cdn.pixabay.com/photo/2019/03/09/08/03/honda-4043784__480.jpg', 'https://cdn.pixabay.com/photo/2020/03/25/15/15/honda-4967605__480.jpg', 'https://cdn.pixabay.com/photo/2021/08/12/05/25/car-6539946__480.jpg', 'https://cdn.pixabay.com/photo/2017/08/07/00/28/red-2597961__480.jpg']
+car.each do |pic|
+  Post.create(user_id: 2, post_title: 'Honda for sale', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(900..9000), category_id: 6, sub_category_id: 32, category_name:'vehicles', sub_category_name: 'car')
+end
+
+motorcycle = ['https://cdn.pixabay.com/photo/2018/02/12/02/05/motorcycle-3147278__480.jpg', 'https://cdn.pixabay.com/photo/2018/10/29/19/14/motorcycle-3781800__480.jpg', 'https://cdn.pixabay.com/photo/2017/12/31/00/08/motorcycle-3051288__480.png', 'https://cdn.pixabay.com/photo/2017/01/31/15/22/art-2025018__480.png', 'https://cdn.pixabay.com/photo/2016/09/27/15/15/motorcycle-1698615__480.jpg', 'https://cdn.pixabay.com/photo/2016/11/18/21/30/bike-1836962__480.jpg', 'https://cdn.pixabay.com/photo/2014/07/31/23/37/motorbike-407186__480.jpg']
+motorcycle.each do |pic|
+  Post.create(user_id: 2, post_title: 'Motorbike', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(400..10000), category_id: 6, sub_category_id: 33, category_name:'vehicles', sub_category_name: 'motorcycle')
+end
+
+truck = ['https://cdn.pixabay.com/photo/2017/09/13/18/01/isolated-2746379__480.png', 'https://cdn.pixabay.com/photo/2017/10/03/18/44/truck-2813648__480.jpg', 'https://cdn.pixabay.com/photo/2017/06/27/18/18/isolated-2448337__480.png', 'https://cdn.pixabay.com/photo/2016/09/25/18/29/nissan-1694345__480.jpg', 'https://cdn.pixabay.com/photo/2017/07/16/11/41/peugeot-203-2509032__480.png', 'https://cdn.pixabay.com/photo/2016/04/01/12/11/pickup-truck-1300585__480.png', 'https://cdn.pixabay.com/photo/2017/08/19/02/17/auto-2657095__480.png']
+truck.each do |pic|
+  Post.create(user_id: 2, post_title: 'Truck', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(400..10000), category_id: 6, sub_category_id: 34, category_name:'vehicles', sub_category_name: 'truck')
+end
+puts '->vehicles created'
+
+puts 'creating boats'
+sailboat = ['https://cdn.pixabay.com/photo/2016/06/22/16/18/sailing-boat-1473281__480.jpg', 'https://cdn.pixabay.com/photo/2020/01/19/10/43/sailboat-4777340__480.jpg', 'https://cdn.pixabay.com/photo/2016/06/22/16/22/sailing-vessel-1473316__480.jpg', 'https://cdn.pixabay.com/photo/2016/08/05/18/17/sailboat-1572874__480.jpg', 'https://cdn.pixabay.com/photo/2015/09/21/17/53/sailboat-950352__480.jpg', 'https://cdn.pixabay.com/photo/2014/09/25/00/01/sailboat-459794__480.jpg', 'https://cdn.pixabay.com/photo/2015/09/22/19/00/ship-952292__480.jpg']
+sailboat.each do |pic|
+  Post.create(user_id: 2, post_title: 'Sailboat', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(9000..80000), category_id: 8, sub_category_id: 37, category_name:'boats', sub_category_name: 'sailboat')
+end
+
+speedboat = ['https://cdn.pixabay.com/photo/2021/08/25/04/18/offshore-powerboat-racing-6572333__480.jpg', 'https://cdn.pixabay.com/photo/2015/06/13/12/02/powerboat-807975__480.jpg', 'https://cdn.pixabay.com/photo/2013/04/05/14/12/speedboat-100724__480.jpg', 'https://cdn.pixabay.com/photo/2015/06/27/03/34/speedboat-823229__480.jpg', 'https://cdn.pixabay.com/photo/2022/09/10/11/56/motorboat-7444885__480.jpg', 'https://cdn.pixabay.com/photo/2016/09/08/11/37/powerboat-1653985__480.jpg', 'https://cdn.pixabay.com/photo/2017/09/25/07/49/powerboat-2784250__480.jpg']
+speedboat.each do |pic|
+  Post.create(user_id: 2, post_title: 'Speedboat', post_body: 'Pretty fast. Check out the picture and send me a message.', image_url: pic, price: rand(9000..80000), category_id: 8, sub_category_id: 38, category_name:'boats', sub_category_name: 'speedboat')
+end
+
+yacht = ['https://cdn.pixabay.com/photo/2016/08/25/16/47/luxury-yacht-1620040__480.jpg', 'https://cdn.pixabay.com/photo/2016/08/19/03/36/yacht-1604478__480.jpg', 'https://cdn.pixabay.com/photo/2017/10/01/18/48/trimaran-2806621__480.jpg', 'https://cdn.pixabay.com/photo/2015/11/10/11/51/montenegro-1036764__480.jpg', 'https://cdn.pixabay.com/photo/2015/02/16/15/10/motor-yacht-638390__480.jpg', 'https://cdn.pixabay.com/photo/2015/11/12/19/19/yacht-1040850__480.jpg', 'https://cdn.pixabay.com/photo/2018/06/17/17/00/yacht-3480913__480.jpg']
+yacht.each do |pic|
+  Post.create(user_id: 2, post_title: 'Luxus Yacht', post_body: 'Nice one. Check out the picture and send me a message.', image_url: pic, price: rand(1000000..10000000), category_id: 8, sub_category_id: 39, category_name:'boats', sub_category_name: 'yacht')
+end
+
+
+
+puts '->boats created'
 
 
 # mal = ['', '', '', '', '', '', '']
