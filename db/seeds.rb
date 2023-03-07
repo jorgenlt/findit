@@ -286,10 +286,9 @@ puts '-> electronics created'
 puts 'creating home'
 furniture = ['https://cdn.pixabay.com/photo/2020/10/18/09/16/bedroom-5664221__480.jpg', 'https://cdn.pixabay.com/photo/2016/03/28/09/34/bedroom-1285156__480.jpg', 'https://cdn.pixabay.com/photo/2014/07/10/17/17/bedroom-389254__480.jpg', 'https://cdn.pixabay.com/photo/2016/11/19/13/06/bed-1839183__480.jpg']
 furniture.each do |pic|
-  Post.create(user_id: 2, post_title: 'bed for sale', post_body: 'Very little used. Come check it out.', image_url: pic, price: 400, category_id: 3, sub_category_id: 19, category_name:'home', sub_category_name: 'furniture')
+  Post.create(user_id: 2, post_title: 'bed for sale', post_body: 'Very little used. Come check it out.', image_url: pic, price: rand(200..700), category_id: 3, sub_category_id: 19, category_name:'home', sub_category_name: 'furniture')
 end
 
-mal = ['', '', '', '']
 lamps = ['https://cdn.pixabay.com/photo/2022/08/17/02/23/edison-bulb-7391388__480.jpg', 'https://cdn.pixabay.com/photo/2017/12/27/16/32/lantern-3043042__480.jpg', 'https://cdn.pixabay.com/photo/2016/08/18/20/05/light-bulbs-1603766__480.jpg', 'https://cdn.pixabay.com/photo/2016/11/21/18/20/bright-1847006__480.jpg']
 lamps.each do |pic|
   Post.create(user_id: 2, post_title: 'beautiful lamp', post_body: 'Very little used. Come check it out.', image_url: pic, price: 400, category_id: 3, sub_category_id: 20, category_name:'home', sub_category_name: 'lamps')
@@ -316,9 +315,41 @@ dog = ['https://cdn.pixabay.com/photo/2016/12/13/05/15/puppy-1903313__480.jpg', 
 dog.each do |pic|
   Post.create(user_id: 2, post_title: 'adopt a dog', post_body: 'Come check it out.', image_url: pic, price: 400, category_id: 4, sub_category_id: 24, category_name:'pets', sub_category_name: 'dog')
 end
-
 puts '->pets created'
 
+puts 'creating sports'
+ball = ['https://cdn.pixabay.com/photo/2012/02/29/15/44/football-19115__480.jpg', 'https://cdn.pixabay.com/photo/2019/09/03/16/06/sport-4449736__480.jpg', 'https://cdn.pixabay.com/photo/2017/06/12/01/50/soccer-2394121__480.jpg', 'https://cdn.pixabay.com/photo/2016/05/25/10/22/ball-1414400__480.jpg', 'https://cdn.pixabay.com/photo/2012/02/29/16/12/football-19448__480.jpg', 'https://cdn.pixabay.com/photo/2016/02/18/14/30/football-1207235__480.jpg', 'https://cdn.pixabay.com/photo/2015/09/09/18/26/green-932350__480.jpg']
+ball.each do |pic|
+  Post.create(user_id: 2, post_title: 'Football boots, little worn', post_body: 'Selling my awesome football boots! ', image_url: pic, price: rand(50..300), category_id: 5, sub_category_id: 27, category_name:'sports', sub_category_name: 'ballsport')
+end
+
+golf = ['https://cdn.pixabay.com/photo/2016/11/29/13/48/golf-1869983__480.jpg', 'https://cdn.pixabay.com/photo/2015/12/02/21/12/golf-1073465__480.jpg', 'https://cdn.pixabay.com/photo/2014/11/28/20/42/golf-ball-549228__480.jpg', 'https://cdn.pixabay.com/photo/2014/10/11/07/18/golf-484255__480.jpg', 'https://cdn.pixabay.com/photo/2020/05/25/02/44/golf-5216736__480.jpg', 'https://cdn.pixabay.com/photo/2016/08/19/19/06/golf-ball-1605948__480.jpg', 'https://cdn.pixabay.com/photo/2016/11/29/03/32/golf-ball-1867079__480.jpg']
+golf.each do |pic|
+  Post.create(user_id: 2, post_title: 'Rare golfball, limited edition.', post_body: 'Check out the picture and send me a message.', image_url: pic, price: rand(50..300), category_id: 5, sub_category_id: 28, category_name:'sports', sub_category_name: 'golf')
+end
+
+outdoors = ['https://cdn.pixabay.com/photo/2017/08/17/08/08/camp-2650359__480.jpg', 'https://cdn.pixabay.com/photo/2018/12/24/22/21/camping-3893598__480.jpg', 'https://cdn.pixabay.com/photo/2013/02/25/04/37/kodiak-85921__480.jpg', 'https://cdn.pixabay.com/photo/2013/02/21/04/48/mongolia-84133__480.jpg', 'https://cdn.pixabay.com/photo/2019/03/18/15/11/tent-4063320__480.png', 'https://cdn.pixabay.com/photo/2018/12/24/22/18/camping-3893584__480.jpg', 'https://cdn.pixabay.com/photo/2018/03/15/13/36/bike-3228237__480.jpg']
+outdoors.each do |pic|
+  Post.create(user_id: 2, post_title: 'Old tent', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(50..200), category_id: 5, sub_category_id: 29, category_name:'sports', sub_category_name: 'outdoors')
+end
+
+winter = ['https://cdn.pixabay.com/photo/2017/12/15/09/32/cross-country-skiing-3020748__480.jpg', 'https://cdn.pixabay.com/photo/2016/10/31/10/50/skis-1785285__480.jpg', 'https://cdn.pixabay.com/photo/2014/12/31/02/59/skis-584600__480.jpg', 'https://cdn.pixabay.com/photo/2016/01/17/20/51/ski-1145553__480.jpg', 'https://cdn.pixabay.com/photo/2017/02/06/11/53/skiing-2042683__480.jpg', 'https://cdn.pixabay.com/photo/2017/01/31/23/28/ski-2028185__480.png', 'https://cdn.pixabay.com/photo/2017/03/24/14/47/ski-2171335__480.jpg']
+winter.each do |pic|
+  Post.create(user_id: 2, post_title: 'Used skis', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(300..500), category_id: 5, sub_category_id: 30, category_name:'sports', sub_category_name: 'winter')
+end
+
+water = ['https://cdn.pixabay.com/photo/2017/06/10/22/27/diving-mask-2390958__480.jpg', 'https://cdn.pixabay.com/photo/2018/08/09/08/30/diving-3593972__480.jpg', 'https://cdn.pixabay.com/photo/2021/05/23/13/38/glasses-6276226__480.jpg', 'https://cdn.pixabay.com/photo/2017/06/10/22/23/diving-mask-2390950__480.jpg', 'https://cdn.pixabay.com/photo/2015/02/03/14/02/swim-goggles-622591__480.jpg', 'https://cdn.pixabay.com/photo/2016/08/02/07/11/diving-mask-1562705__480.jpg', 'https://cdn.pixabay.com/photo/2023/01/14/17/52/ai-generated-7718724__480.jpg']
+water.each do |pic|
+  Post.create(user_id: 2, post_title: 'Swim goggles', post_body: 'Pretty old. Check out the picture and send me a message.', image_url: pic, price: rand(5..30), category_id: 5, sub_category_id: 31, category_name:'sports', sub_category_name: 'water')
+end
+
+
+
+
+puts '->sports created'
+
+
+# mal = ['', '', '', '', '', '', '']
 
 # # category properties
 # puts 'destroying properties...'
