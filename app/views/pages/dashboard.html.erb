@@ -9,7 +9,7 @@
         <%= image_tag 'findit.png', height: "25px" %>
       <% end %>
     </div>
-    <%= form_with url: root_path, method: :get, class: "d-flex w-100" do %>
+    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control field-search",
@@ -27,14 +27,16 @@
         </div>
       <% else %>
         <h2 class="mt-5">Search results</h2>
-        <div class="row row-cols-3 all-posts">
+        <div class="row all-posts">
           <% @search_results.each do |post| %>
               <div class="col all-posts-card">
                 <%= link_to post_path(post), class: "all-posts-link" do %>
                   <%= attached_photo(post, 400) %>
-                  <p class="all-posts-location">Oslo</p>
-                  <p class="all-posts-description"><%= post.post_title.capitalize %></p>
-                  <span>€ <%= post.price %></span>
+                  <div class="post-details">
+                    <p class="all-posts-location">Oslo</p>
+                    <p class="all-posts-description"><%= post.post_title.capitalize %></p>
+                    <span>€ <%= post.price %></span>
+                  </div>
                 <% end %>
               </div>
           <% end %>
