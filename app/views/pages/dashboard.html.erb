@@ -22,11 +22,9 @@
   <div class="search-results w-100">
     <% unless @search_results == nil %>
       <% if @search_results.empty? %>
-        <div class="mt-5">
-          <h3>No results for your search.</h3>
-        </div>
+        <h3 class="no-results">No results for your search.</h3>
       <% else %>
-        <h2 class="mt-5">Search results</h2>
+        <h2><%= @search_results.size %> results found</h2>
         <div class="row all-posts">
           <% @search_results.each do |post| %>
               <div class="col all-posts-card">
