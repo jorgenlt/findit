@@ -5,11 +5,10 @@
 The app is live at [findit.herokuapp.com](http://findit.herokuapp.com/).
 
 </br>
-</br>
 <div style="display: flex;">
   <img
-    src="https://user-images.githubusercontent.com/108831121/215315086-6bec3102-2c50-441a-a5b1-2ec071d5eaee.png"
-    width="300"
+    src="https://user-images.githubusercontent.com/108831121/225033204-8692b355-f112-4941-a6ba-d7e8ef87d3b9.png"
+    width="600"
     height="auto">
 </div>
 </br>
